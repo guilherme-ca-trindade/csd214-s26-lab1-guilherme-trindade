@@ -100,3 +100,42 @@ src/
             └── bookstore/
                 └── pojos/              # Unit Tests
 ```
+
+## Lab 1: Analysis
+
+### Problem Statement:
+A Nintendo Gaming Store specializing in the sale of Nintendo consoles, gaming
+hardware, and physical game titles. Customers can purchase complete gaming systems 
+for example, Nintendo Switch), standalone hardware components (for example,Joy-Con controllers), 
+and Nintendo-exclusive game titles (for example, Mario Odyssey, or Legend of Zelda).
+The store tracks inventory by product type, manages pricing for different product 
+categories.
+
+### Noun/Verb Table: 
+#### Nouns Table (Potential Classes/Attributes):
+1. **Console:** (Nintendo Switch, Switch OLED, Switch Lite)
+2. **Game** (Mario Odyssey, The Legend of Zelda, Mario Kart)
+3. **Hardware** (controllers, docks, accessories)
+4. **Manufacturer** (Nintendo, third-party)
+5. **Stock/Inventory**
+6. **Price**
+7. **Release Date**
+
+#### Verbs Table (Potential Methods):
+1. **sellItem()** - process a sale
+2. **checkStock()** - verify inventory
+3. **updatePrice()** - modify pricing
+4. **initialize()** - set up product details
+5. **edit()** - modify product attributes
+
+#### Synonyms Table:
+1. **Game** = Title = Software
+2. **Console** = Platform = System
+3. **Hardware** = Component = Accessory
+
+
+
+
+
+
+
