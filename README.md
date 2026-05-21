@@ -133,6 +133,32 @@ categories.
 2. **Console** = Platform = System
 3. **Hardware** = Component = Accessory
 
+### Phase 2: AI-Assisted Architectural Blueprinting
+
+#### Class Hierarchy Design
+
+Based on OO Analysis principles, the following class hierarchy is recommended:
+![NintendoClassHierarchy.png](documentation/NintendoClassHierarchy.png)
+
+### **Detailed Design:**
+
+| Class Name | Parent Class | Unique Field | Field Type | Purpose |
+| --- | --- | --- | --- | --- |
+| **NintendoProduct** | Product | platform | String | Identifies which Nintendo system (Switch, Wii U, 3DS) |
+| **NintendoGame** | NintendoProduct | genre | String | Specifies game category (Action, RPG, Sports, Puzzle, Adventure) |
+| **NintendoHardware** | NintendoProduct | hardwareType | String | Specifies hardware category (Console, Controller, Dock, Case, Charger) |
+
+### **Why This Design?**
+✅ **Encapsulation:** Each class will have private fields with public getters/setters
+
+✅ **Constructor Chaining:** The "Bucket Brigade" pattern passes up through
+
+✅ **Extensibility:** Easy to add more concrete types (e.g., `NintendoAccessory`) later
+
+✅ **Polymorphism:** Each concrete class can override `sellItem()` for specific behavior
+
+✅ **Java Bean Compliant:** No-arg constructors and loaded constructors included `productId``Product`
+
 
 
 
