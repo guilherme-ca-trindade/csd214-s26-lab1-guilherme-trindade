@@ -69,6 +69,8 @@ public class App {
             System.out.println("2. Add Magazine");
             System.out.println("3. Add DiscMag");
             System.out.println("4. Add Ticket");
+            System.out.println("5. Add Nintendo Game");
+            System.out.println("6. Add Nintendo Hardware");
             System.out.println("99. Exit");
 
             try {
@@ -87,6 +89,8 @@ public class App {
                 case 2: item = new Magazine(); break;
                 case 3: item = new DiscMag(); break;
                 case 4: item = new Ticket(); break;
+                case 5: item = new NintendoGame(); break;
+                case 6: item = new NintendoHardware(); break;
                 default: System.out.println("Invalid selection."); continue;
             }
 
@@ -114,6 +118,8 @@ public class App {
             System.out.println("3. Magazines");
             System.out.println("4. DiscMags");
             System.out.println("5. Tickets");
+            System.out.println("6. Nintendo Games");
+            System.out.println("7. Nintendo Hardware");
             System.out.println("99. Exit");
 
             try {
@@ -133,6 +139,8 @@ public class App {
                 case 3: filter = Magazine.class; break;
                 case 4: filter = DiscMag.class; break;
                 case 5: filter = Ticket.class; break;
+                case 6: filter = NintendoGame.class; break;
+                case 7: filter = NintendoHardware.class; break;
                 default: System.out.println("Invalid selection."); continue;
             }
 
@@ -271,6 +279,53 @@ public class App {
             t.description = "Concert: " + faker.rockBand().name();
             t.price = faker.number().randomDouble(2, 50, 150);
             addItem(t);
+
+            // Niche Product Line (Nintendo Game)
+            String[] nintendoGames = {
+                "The Legend of Zelda: Tears of the Kingdom",
+                "Super Mario Bros. Wonder",
+                "Mario Kart 8 Deluxe",
+                "Animal Crossing: New Horizons",
+                "Fire Emblem Engage",
+                "Splatoon 3",
+                "Pokemon Scarlet",
+                "Mario Odyssey",
+            };
+            String[] genres = {"Action", "Adventure", "RPG", "Racing", "Simulation", "Shooter", "Puzzle"};
+            String[] platforms = {"Switch", "Switch OLED", "Switch Lite"};
+
+            NintendoGame ng = new NintendoGame(
+                    nintendoGames[faker.number().numberBetween(0, nintendoGames.length)],
+                    faker.number().randomDouble(2, 39, 69), // Typical game price range
+                    faker.number().numberBetween(3, 25),    // Copies in stock
+                    platforms[faker.number().numberBetween(0, platforms.length)],
+                    genres[faker.number().numberBetween(0, genres.length)]
+            );
+            addItem(ng);
+
+            // Niche Product Line (Nintendo Hardware)
+            String[] hardwareNames = {
+                "Nintendo Switch OLED Console",
+                "Nintendo Switch Console",
+                "Nintendo Switch Lite",
+                "Joy-Con Controller Pair",
+                "Pro Controller",
+                "Dock Station",
+                "USB-C Charger",
+                "Carrying Case"
+            };
+            String[] hardwareTypes = {"Console", "Joy-Con", "Controller", "Dock", "Charger", "Case"};
+            String[] colors = {"White", "Black", "Red", "Blue", "Green", "Yellow", "Gray"};
+
+            NintendoHardware nh = new NintendoHardware(
+                    hardwareNames[faker.number().numberBetween(0, hardwareNames.length)],
+                    faker.number().randomDouble(2, 25, 350),
+                    faker.number().numberBetween(2, 20),
+                    platforms[faker.number().numberBetween(0, platforms.length)],
+                    hardwareTypes[faker.number().numberBetween(0, hardwareTypes.length)],
+                    colors[faker.number().numberBetween(0, colors.length)]
+            );
+            addItem(nh);
         }
     }
 }
